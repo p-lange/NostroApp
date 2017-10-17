@@ -24,8 +24,6 @@ public enum Term {
 
          termName = name;
          termSource = rawSource;
-
      }
-
 
 }

@@ -35,7 +35,7 @@ public class Prophecy {
                     Log.d("TAG", "Got a HIT!");
                 }
             }
-            prophecy += word + " ";
+            prophecy += word;
             Log.d("TAG", "Did not get HIT!");
         }
 
