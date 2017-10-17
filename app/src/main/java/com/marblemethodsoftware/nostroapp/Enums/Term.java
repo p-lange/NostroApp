@@ -19,7 +19,6 @@ public enum Term {
 
     public String termName;
     public int termSource;
-    public String[] termList;
 
      Term (String name, int rawSource){
 
