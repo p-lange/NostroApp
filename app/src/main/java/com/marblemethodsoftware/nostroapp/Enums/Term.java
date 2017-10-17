@@ -4,7 +4,6 @@ import com.marblemethodsoftware.nostroapp.R;
 
 public enum Term {
 
-
     ACTION("action", R.raw.actions),
     ADJECTIVE("adjective", R.raw.adjectives),
     COLOR("color", R.raw.colors),

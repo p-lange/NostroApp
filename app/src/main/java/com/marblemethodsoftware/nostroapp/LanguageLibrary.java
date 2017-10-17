@@ -11,22 +11,9 @@ import java.util.*;
 
 public class LanguageLibrary {
 
-    private String[] nouns;
-    private String[] weapons;
-    private String[] actions;
-    private String[] hardVerbs;
-    private String[] ingVerbs;
-    private String[] origins;
-    private String[] originDescriptions;
-    private String[] adjectives;
-    private String[] sVerbs;
-    private String[] timePeriods;
-    private String[] pluralNouns;
-
     private Context context;
     private Map<String, String[]> wordLibrary;
     private String[] sentenceLibrary;
-
 
     public LanguageLibrary(Context context){
         wordLibrary = new HashMap<>();
@@ -37,11 +24,10 @@ public class LanguageLibrary {
             wordLibrary.put(term.termName, getLibrary(term.termSource, context));
         }
         sentenceLibrary = getLibrary(R.raw.sentencetemplates, context);
-
-
     }
 
     private String[] getLibrary(int id, Context context){
+
 
         InputStream stream = context.getResources().openRawResource(id);
         InputStreamReader inputReader = new InputStreamReader(stream);

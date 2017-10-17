@@ -39,7 +39,6 @@ public class Prophecy {
             Log.d("TAG", "Did not get HIT!");
         }
 
-
         return prophecy;
     }
 

@@ -6,7 +6,7 @@ public class SentenceParser {
 
 
     public static String[] getStringArray(String sentence) {
-
+    //TODO: Fix this REGEX to keep spaces and punctuation.
         String pattern = "\\s+";
 
         return sentence.split(pattern);
