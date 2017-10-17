@@ -1,11 +1,6 @@
 package com.marblemethodsoftware.nostroapp;
 
-
-import android.util.Log;
 import com.marblemethodsoftware.nostroapp.Enums.Term;
-
-import java.util.Random;
-
 
 public class Prophecy {
 
@@ -27,19 +22,18 @@ public class Prophecy {
 
     private String sentenceBuilder(String sentence){
         String[] words = SentenceParser.getStringArray(sentence);
-        String prophecy = "";
+        StringBuilder builder = new StringBuilder();
+
         for (String word : words){
             for (Term term : Term.values()){
                 if (word.equals(term.termName)){
                     word = library.getRandomWord(term);
-                    Log.d("TAG", "Got a HIT!");
                 }
             }
-            prophecy += word;
-            Log.d("TAG", "Did not get HIT!");
+            builder.append(word);
         }
 
-        return prophecy;
+        return builder.toString().substring(0, 1).toUpperCase() + builder.toString().substring(1);
     }
 
 }
