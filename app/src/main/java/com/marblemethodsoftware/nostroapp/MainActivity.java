@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private Button button;
     private Prophecy prof;
-    private WordLibrary library;
+    private LanguageLibrary library;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +27,14 @@ public class MainActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.getProphecy);
 
 
-        library = new WordLibrary(this);
+        library = new LanguageLibrary(this);
 
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            Random rand = new Random();
-            int seed = rand.nextInt(15);
-                prof = new Prophecy(seed,  library);
+
+                prof = new Prophecy(library);
 
                 textView.setText(prof.getProphecyText());
                 animator.animateText(textView);

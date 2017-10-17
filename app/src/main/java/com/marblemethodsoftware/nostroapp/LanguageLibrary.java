@@ -9,7 +9,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class WordLibrary {
+public class LanguageLibrary {
 
     private String[] nouns;
     private String[] weapons;
@@ -23,18 +23,22 @@ public class WordLibrary {
     private String[] timePeriods;
     private String[] pluralNouns;
 
-    public Context context;
-    public Map<String, String[]> library;
+    private Context context;
+    private Map<String, String[]> wordLibrary;
+    private String[] sentenceLibrary;
 
 
-    public WordLibrary(Context context){
-        library = new HashMap<>();
+    public LanguageLibrary(Context context){
+        wordLibrary = new HashMap<>();
 
         this.context = context;
 
         for (Term term : Term.values()){
-            library.put(term.termName, getLibrary(term.termSource, context));
+            wordLibrary.put(term.termName, getLibrary(term.termSource, context));
         }
+        sentenceLibrary = getLibrary(R.raw.sentencetemplates, context);
+
+
     }
 
     private String[] getLibrary(int id, Context context){
@@ -56,10 +60,23 @@ public class WordLibrary {
     }
 
     public String getRandomWord(Term term){
-        String[] array = library.get(term.termName);
+        String[] array = wordLibrary.get(term.termName);
         Random rand = new Random();
         int n = rand.nextInt(array.length);
         return array[n];
     }
+
+
+    public Map<String, String[]> getWordLibrary(){
+        return wordLibrary;
+    }
+
+    public String getRandomSentence(){
+        Random rand = new Random();
+                int n = rand.nextInt(sentenceLibrary.length);
+        return sentenceLibrary[n];
+    }
+
+
 
 }
