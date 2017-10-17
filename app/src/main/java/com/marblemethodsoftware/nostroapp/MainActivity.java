@@ -33,9 +33,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 prof = new Prophecy(library);
-
                 textView.setText(prof.getProphecyText());
                 animator.animateText(textView);
             }

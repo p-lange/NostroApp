@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.marblemethodsoftware.nostroapp.R;
 
 public class AnimatorUtil {
-    Context mContext;
+    private Context mContext;
 
     public AnimatorUtil(Context context) {
         mContext = context;

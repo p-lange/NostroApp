@@ -28,7 +28,6 @@ public class LanguageLibrary {
 
     private String[] getLibrary(int id, Context context){
 
-
         InputStream stream = context.getResources().openRawResource(id);
         InputStreamReader inputReader = new InputStreamReader(stream);
         BufferedReader reader = new BufferedReader(inputReader);
@@ -50,11 +49,6 @@ public class LanguageLibrary {
         Random rand = new Random();
         int n = rand.nextInt(array.length);
         return array[n];
-    }
-
-
-    public Map<String, String[]> getWordLibrary(){
-        return wordLibrary;
     }
 
     public String getRandomSentence(){
