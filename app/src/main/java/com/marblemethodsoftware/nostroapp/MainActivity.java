@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private Button button;
     private Prophecy prof;
+    private WordLibrary library;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.getProphecy);
 
 
-        final WordLibrary library = new WordLibrary(this);
+        library = new WordLibrary(this);
 
 
         button.setOnClickListener(new View.OnClickListener() {

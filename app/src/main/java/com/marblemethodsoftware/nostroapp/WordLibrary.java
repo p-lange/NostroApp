@@ -6,10 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class WordLibrary {
 
@@ -25,19 +22,21 @@ public class WordLibrary {
     private String[] timePeriods;
     private String[] pluralNouns;
 
-    private Context context;
-    private Map<String, String[]> library;
+    public Context context;
+    public Map<String, String[]> library;
+
 
     public WordLibrary(Context context){
-        //build all the world libraries
+        library = new HashMap<>();
+
         this.context = context;
 
         for (Term term : Term.values()){
-            library.put(term.termName, buildLibrary(term.termSource, context));
+            library.put(term.termName, getLibrary(term.termSource, context));
         }
     }
 
-    private String[] buildLibrary(int id, Context context){
+    private String[] getLibrary(int id, Context context){
 
         InputStream stream = context.getResources().openRawResource(id);
         InputStreamReader inputReader = new InputStreamReader(stream);

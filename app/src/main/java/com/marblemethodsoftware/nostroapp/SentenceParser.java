@@ -4,8 +4,11 @@ public class SentenceParser {
 
 
 
-    public static String[] getStringArray(String string){
+    public static String[] getStringArray(String sentence){
 
+        String[] words = sentence.split("\\s+");
+
+        return words;
 
     }
 
