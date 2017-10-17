@@ -1,6 +1,10 @@
 package com.marblemethodsoftware.nostroapp;
 
 
+import android.util.Log;
+import com.marblemethodsoftware.nostroapp.Enums.Term;
+
+
 public class Prophecy {
 
     private String prophecyText;
@@ -22,16 +26,18 @@ public class Prophecy {
 
 
     private String sentenceBuilder(int seed){
-        String sentence = "the noun origindescription that ingverb the pluralnoun";
+        String sentence = "the noun that sverb in the season will hardverb";
         String[] words = SentenceParser.getStringArray(sentence);
         String prophecy = "";
         for (String word : words){
             for (Term term : Term.values()){
                 if (word.equals(term.termName)){
                     word = library.getRandomWord(term);
+                    Log.d("TAG", "Got a HIT!");
                 }
             }
-            prophecy += word;
+            prophecy += word + " ";
+            Log.d("TAG", "Did not get HIT!");
         }
 
 

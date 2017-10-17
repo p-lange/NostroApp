@@ -1,10 +1,11 @@
-package com.marblemethodsoftware.nostroapp;
+package com.marblemethodsoftware.nostroapp.Animations;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.content.Context;
 import android.widget.Button;
 import android.widget.TextView;
+import com.marblemethodsoftware.nostroapp.R;
 
 public class AnimatorUtil {
     Context mContext;

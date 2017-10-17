@@ -1,4 +1,6 @@
-package com.marblemethodsoftware.nostroapp;
+package com.marblemethodsoftware.nostroapp.Enums;
+
+import com.marblemethodsoftware.nostroapp.R;
 
 public enum Term {
 

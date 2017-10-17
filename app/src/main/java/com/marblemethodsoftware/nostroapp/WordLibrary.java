@@ -1,6 +1,7 @@
 package com.marblemethodsoftware.nostroapp;
 
 import android.content.Context;
+import com.marblemethodsoftware.nostroapp.Enums.Term;
 
 import java.io.BufferedReader;
 import java.io.IOException;
