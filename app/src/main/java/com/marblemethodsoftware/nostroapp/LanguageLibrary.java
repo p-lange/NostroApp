@@ -11,13 +11,11 @@ import java.util.*;
 
 public class LanguageLibrary {
 
-    private Context context;
     private Map<String, String[]> wordLibrary;
     private String[] sentenceLibrary;
 
     public LanguageLibrary(Context context){
         wordLibrary = new HashMap<>();
-        this.context = context;
 
         for (Term term : Term.values()){
             wordLibrary.put(term.termName, getLibrary(term.termSource, context));
