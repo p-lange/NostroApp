@@ -7,8 +7,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.marblemethodsoftware.nostroapp.Animations.AnimatorUtil;
 
-import java.util.Random;
-
 public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
@@ -25,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
         textView = (TextView) findViewById(R.id.testingText);
         button = (Button) findViewById(R.id.getProphecy);
-
-
         library = new LanguageLibrary(this);
 
 
