@@ -17,7 +17,6 @@ public class LanguageLibrary {
 
     public LanguageLibrary(Context context){
         wordLibrary = new HashMap<>();
-
         this.context = context;
 
         for (Term term : Term.values()){
@@ -31,9 +30,9 @@ public class LanguageLibrary {
         InputStream stream = context.getResources().openRawResource(id);
         InputStreamReader inputReader = new InputStreamReader(stream);
         BufferedReader reader = new BufferedReader(inputReader);
-
         String string;
         List<String> list = new ArrayList<>();
+
         try {
             while ((string = reader.readLine()) != null) {
                 list.add(string);
@@ -53,10 +52,7 @@ public class LanguageLibrary {
 
     public String getRandomSentence(){
         Random rand = new Random();
-                int n = rand.nextInt(sentenceLibrary.length);
+        int n = rand.nextInt(sentenceLibrary.length);
         return sentenceLibrary[n];
     }
-
-
-
 }

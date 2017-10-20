@@ -10,13 +10,10 @@ public class Prophecy {
 
     public Prophecy(LanguageLibrary library){
         this.library = library;
-
         prophecyText = sentenceBuilder(library.getRandomSentence());
-
     }
 
     public String getProphecyText(){
-
         return prophecyText;
     }
 
@@ -32,7 +29,6 @@ public class Prophecy {
             }
             builder.append(word);
         }
-
         return builder.toString().substring(0, 1).toUpperCase() + builder.toString().substring(1);
     }
 
