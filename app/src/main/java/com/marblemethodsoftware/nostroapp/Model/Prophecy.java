@@ -1,4 +1,4 @@
-package com.marblemethodsoftware.nostroapp;
+package com.marblemethodsoftware.nostroapp.Model;
 
 import com.marblemethodsoftware.nostroapp.Enums.Term;
 

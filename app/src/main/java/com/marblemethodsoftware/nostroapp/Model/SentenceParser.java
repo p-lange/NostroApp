@@ -1,4 +1,4 @@
-package com.marblemethodsoftware.nostroapp;
+package com.marblemethodsoftware.nostroapp.Model;
 
 
 public class SentenceParser {
