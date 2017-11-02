@@ -1,5 +1,6 @@
 package com.marblemethodsoftware.nostroapp.UI;
 
+import android.graphics.Typeface;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         final AnimatorUtil animator = new AnimatorUtil(this);
 
         textView = (TextView) findViewById(R.id.testingText);
+        Typeface face = Typeface.createFromAsset(getAssets(),"Caveat-Regular.ttf");
+        textView.setTypeface(face);
         imageButton = (ImageButton) findViewById(R.id.getProphecy);
         library = new LanguageLibrary(this);
 

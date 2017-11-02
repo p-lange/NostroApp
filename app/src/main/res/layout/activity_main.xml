@@ -5,7 +5,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.marblemethodsoftware.nostroapp.UI.MainActivity">
+        tools:context="com.marblemethodsoftware.nostroapp.UI.MainActivity"
+        android:background="@color/backgroundPrimary">
 
     <TextView
             android:layout_width="wrap_content"
@@ -18,7 +19,7 @@
             android:id="@+id/testingText"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="91dp"
-            android:textSize="24sp"
+            android:textSize="35sp"
             android:padding="50dp"
     />
     <ImageButton
