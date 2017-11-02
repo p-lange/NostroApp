@@ -17,20 +17,19 @@ public class AnimatorUtil {
         mContext = context;
     }
 
-    public void animateButton(Button button){
-
+    public void depressButton(Button button){
         Animator scaleButton = AnimatorInflater.loadAnimator(mContext, R.animator.scale);
         scaleButton.setTarget(button);
         scaleButton.start();
     }
 
-    public void animateButton(ImageButton button){
+    public void depressButton(ImageButton button){
         Animator scaleButton = AnimatorInflater.loadAnimator(mContext, R.animator.scale);
         scaleButton.setTarget(button);
         scaleButton.start();
     }
 
-    public void animateText(TextView text){
+    public void fadeText(TextView text){
 
         Animator fadeText = AnimatorInflater.loadAnimator(mContext, R.animator.fade);
         fadeText.setTarget(text);
@@ -38,17 +37,21 @@ public class AnimatorUtil {
     }
 
     public void rotateAndDepress(ImageButton button){
-        Animator scaleButton = AnimatorInflater.loadAnimator(mContext, R.animator.scale);
-        scaleButton.setTarget(button);
-        scaleButton.start();
+        depressButton(button);
+        rotateButton(button);
+    }
 
+    public void rotateButton(ImageButton button){
         RotateAnimation animation = new RotateAnimation(0, 360,
                 Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         animation.setDuration(500);
         button.startAnimation(animation);
-
-
     }
-
+    public void rotateButton(Button button) {
+        RotateAnimation animation = new RotateAnimation(0, 360,
+                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        animation.setDuration(500);
+        button.startAnimation(animation);
+    }
 
 }
