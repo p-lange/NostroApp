@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.marblemethodsoftware.nostroapp.MainActivity">
+        tools:context="com.marblemethodsoftware.nostroapp.UI.MainActivity">
 
     <TextView
             android:layout_width="wrap_content"
@@ -21,15 +21,14 @@
             android:textSize="24sp"
             android:padding="50dp"
     />
-    <Button
-
-            android:text="@string/receive_prophecy_button_text"
+    <ImageButton
+            android:id="@+id/getProphecy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="126dp"
-            android:id="@+id/getProphecy"
-            android:layout_marginBottom="161dp"
+            android:src="@drawable/ic_time_icon"
+            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"/>
+            android:background="@android:color/transparent"
+            />
 
 </RelativeLayout>

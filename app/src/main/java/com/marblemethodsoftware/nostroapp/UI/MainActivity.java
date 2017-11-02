@@ -1,16 +1,21 @@
-package com.marblemethodsoftware.nostroapp;
+package com.marblemethodsoftware.nostroapp.UI;
 
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import com.marblemethodsoftware.nostroapp.Animations.AnimatorUtil;
+import com.marblemethodsoftware.nostroapp.LanguageLibrary;
+import com.marblemethodsoftware.nostroapp.Prophecy;
+import com.marblemethodsoftware.nostroapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
-    private Button button;
+    private ImageButton imageButton;
     private Prophecy prof;
     private LanguageLibrary library;
 
@@ -22,16 +27,17 @@ public class MainActivity extends AppCompatActivity {
         final AnimatorUtil animator = new AnimatorUtil(this);
 
         textView = (TextView) findViewById(R.id.testingText);
-        button = (Button) findViewById(R.id.getProphecy);
+        imageButton = (ImageButton) findViewById(R.id.getProphecy);
         library = new LanguageLibrary(this);
 
 
-        button.setOnClickListener(new View.OnClickListener() {
+        imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 prof = new Prophecy(library);
                 textView.setText(prof.getProphecyText());
                 animator.animateText(textView);
+                animator.rotateAndDepress(imageButton);
             }
         });
     }
