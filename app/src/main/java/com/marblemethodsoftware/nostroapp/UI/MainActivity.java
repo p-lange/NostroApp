@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import com.marblemethodsoftware.nostroapp.Animations.AnimatorUtil;
-import com.marblemethodsoftware.nostroapp.LanguageLibrary;
-import com.marblemethodsoftware.nostroapp.Prophecy;
+import com.marblemethodsoftware.nostroapp.Utils.AnimatorUtil;
+import com.marblemethodsoftware.nostroapp.Model.LanguageLibrary;
+import com.marblemethodsoftware.nostroapp.Model.Prophecy;
 import com.marblemethodsoftware.nostroapp.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 prof = new Prophecy(library);
                 textView.setText(prof.getProphecyText());
                 animator.fadeText(textView);
-                animator.rotateAndDepress(imageButton);
+                animator.rotateAndDepressButton(imageButton);
             }
         });
     }

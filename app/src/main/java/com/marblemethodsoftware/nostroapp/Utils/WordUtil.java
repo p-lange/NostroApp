@@ -1,4 +1,4 @@
-package com.marblemethodsoftware.nostroapp;
+package com.marblemethodsoftware.nostroapp.Utils;
 
 
 import android.util.Log;
@@ -112,11 +112,8 @@ public class WordUtil {
                     }
 
                     Log.d(TAG, jsonData);
-
-
                 }
             }
-
         });
 
         return string;

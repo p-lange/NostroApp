@@ -1,4 +1,4 @@
-package com.marblemethodsoftware.nostroapp.Animations;
+package com.marblemethodsoftware.nostroapp.Utils;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
@@ -30,13 +30,12 @@ public class AnimatorUtil {
     }
 
     public void fadeText(TextView text){
-
         Animator fadeText = AnimatorInflater.loadAnimator(mContext, R.animator.fade);
         fadeText.setTarget(text);
         fadeText.start();
     }
 
-    public void rotateAndDepress(ImageButton button){
+    public void rotateAndDepressButton(ImageButton button){
         depressButton(button);
         rotateButton(button);
     }
@@ -47,11 +46,11 @@ public class AnimatorUtil {
         animation.setDuration(500);
         button.startAnimation(animation);
     }
+
     public void rotateButton(Button button) {
         RotateAnimation animation = new RotateAnimation(0, 360,
                 Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         animation.setDuration(500);
         button.startAnimation(animation);
     }
-
 }

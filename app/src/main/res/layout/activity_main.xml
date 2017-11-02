@@ -19,7 +19,7 @@
             android:id="@+id/testingText"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="91dp"
-            android:textSize="35sp"
+            android:textSize="40sp"
             android:padding="50dp"
     />
     <ImageButton
