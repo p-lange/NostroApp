@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:tools="http://schemas.android.com/tools"
+                tools:background="@color/backgroundPrimary">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" android:layout_alignParentStart="true" android:layout_marginTop="11dp"
+            android:id="@+id/prophecyListText"
+            tools:text="Beware when the orange harlet doth rise, for then will the serpents die."
+            android:textSize="24sp"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+    />
+</RelativeLayout>
