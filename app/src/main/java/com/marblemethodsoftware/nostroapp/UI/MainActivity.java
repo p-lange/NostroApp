@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.testingText);
         Typeface face = Typeface.createFromAsset(getAssets(),"Caveat-Regular.ttf");
         textView.setTypeface(face);
+        textView.setText("");
         imageButton = (ImageButton) findViewById(R.id.getProphecy);
         storedPropheciesButton = (ImageButton) findViewById(R.id.storedPropheciesButton);
         library = new LanguageLibrary(this);
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, PriorPropheciesActivity.class);
                 Set<String> prophecies = storedProphecies.getStringSet(PROPHECIES_KEY, null);
+                textView.setText("");
 
                 if (prophecies != null) {
                     String[] prophecyArray = prophecies.toArray(new String[0]);

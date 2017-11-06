@@ -9,12 +9,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageButton;
 import com.marblemethodsoftware.nostroapp.R;
+import com.marblemethodsoftware.nostroapp.Utils.AnimatorUtil;
 
 public class PriorPropheciesActivity extends AppCompatActivity {
 
     private String[] prophecies;
-    private FloatingActionButton clearPropheciesButton;
+    private ImageButton clearPropheciesButton;
     private SharedPreferences storedProphecies;
 
 
@@ -25,11 +27,13 @@ public class PriorPropheciesActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         prophecies = intent.getStringArrayExtra("PROPHECIES_KEY");
+        final AnimatorUtil animator = new AnimatorUtil(this);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        clearPropheciesButton = (FloatingActionButton) findViewById(R.id.clearProphecies);
 
-        ProphecyListAdapter adapter = new ProphecyListAdapter(prophecies);
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        clearPropheciesButton = (ImageButton) findViewById(R.id.clearProphecies);
+
+        final ProphecyListAdapter adapter = new ProphecyListAdapter(prophecies);
         recyclerView.setAdapter(adapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -39,11 +43,16 @@ public class PriorPropheciesActivity extends AppCompatActivity {
         clearPropheciesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                animator.depressButton(clearPropheciesButton);
                 storedProphecies = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor editor = storedProphecies.edit();
                 editor.clear();
                 editor.apply();
                 finish();
+
+
+
+
             }
         });
 
