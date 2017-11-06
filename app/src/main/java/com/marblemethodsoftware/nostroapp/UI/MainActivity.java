@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.marblemethodsoftware.nostroapp.Utils.AnimatorUtil;
 import com.marblemethodsoftware.nostroapp.Model.LanguageLibrary;
 import com.marblemethodsoftware.nostroapp.Model.Prophecy;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String PROPHECIES_KEY = "PROPHECIES_KEY";
     private SharedPreferences storedProphecies;
     private ImageButton storedPropheciesButton;
+    private String CONTEXT_KEY = "CONTEXT_KEY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +64,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, PriorPropheciesActivity.class);
                 Set<String> prophecies = storedProphecies.getStringSet(PROPHECIES_KEY, null);
-                String[] prophecyArray = prophecies.toArray(new String[0]);
-                intent.putExtra(PROPHECIES_KEY, prophecyArray);
-                startActivity(intent);
+
+                if (prophecies != null) {
+                    String[] prophecyArray = prophecies.toArray(new String[0]);
+                    intent.putExtra(PROPHECIES_KEY, prophecyArray);
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "No saved prophecies.", Toast.LENGTH_LONG).show();
+                }
             }
         });
 

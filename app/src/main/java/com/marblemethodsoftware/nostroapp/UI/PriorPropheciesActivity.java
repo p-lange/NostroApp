@@ -1,15 +1,22 @@
 package com.marblemethodsoftware.nostroapp.UI;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import com.marblemethodsoftware.nostroapp.R;
 
 public class PriorPropheciesActivity extends AppCompatActivity {
 
     private String[] prophecies;
+    private FloatingActionButton clearPropheciesButton;
+    private SharedPreferences storedProphecies;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +27,25 @@ public class PriorPropheciesActivity extends AppCompatActivity {
         prophecies = intent.getStringArrayExtra("PROPHECIES_KEY");
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        clearPropheciesButton = (FloatingActionButton) findViewById(R.id.clearProphecies);
 
         ProphecyListAdapter adapter = new ProphecyListAdapter(prophecies);
         recyclerView.setAdapter(adapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+
+
+
+        clearPropheciesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                storedProphecies = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                SharedPreferences.Editor editor = storedProphecies.edit();
+                editor.clear();
+                editor.apply();
+                finish();
+            }
+        });
 
     }
 }
