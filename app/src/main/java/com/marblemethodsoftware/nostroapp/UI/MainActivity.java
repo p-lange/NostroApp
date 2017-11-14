@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         storedProphecies = PreferenceManager.getDefaultSharedPreferences(this);
 
-
         final AnimatorUtil animator = new AnimatorUtil(this);
 
         textView = (TextView) findViewById(R.id.testingText);
@@ -77,8 +76,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 
     private void addProphecyToSavedList(String prophecy){

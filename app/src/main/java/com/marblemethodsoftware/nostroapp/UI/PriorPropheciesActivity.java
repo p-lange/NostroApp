@@ -24,21 +24,15 @@ public class PriorPropheciesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prior_prophecies);
-
         Intent intent = getIntent();
         prophecies = intent.getStringArrayExtra("PROPHECIES_KEY");
         final AnimatorUtil animator = new AnimatorUtil(this);
-
-
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         clearPropheciesButton = (ImageButton) findViewById(R.id.clearProphecies);
-
         final ProphecyListAdapter adapter = new ProphecyListAdapter(prophecies);
         recyclerView.setAdapter(adapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-
-
 
         clearPropheciesButton.setOnClickListener(new View.OnClickListener() {
             @Override

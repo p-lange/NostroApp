@@ -13,10 +13,8 @@ public class ProphecyListAdapter extends RecyclerView.Adapter<ProphecyListAdapte
     private String[] prophecyList;
     public TextView prophecyText;
 
-
     public ProphecyListAdapter (String[] prophecies){
         prophecyList = prophecies;
-
     }
 
     @Override
